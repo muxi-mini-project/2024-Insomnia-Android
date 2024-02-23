@@ -1,6 +1,6 @@
 import {useState} from "react";
 import axios from 'axios'
-import {Alert, TextInput, View} from "react-native";
+import {Alert, Text, TextInput, View} from "react-native";
 function Login (){
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -13,7 +13,7 @@ function Login (){
 
             if (response.data.success) {
                 Alert.alert('登录成功', `欢迎, ${username}!`);
-                // 这里可以进行更多的逻辑处理，如跳转到其他页面或保存令牌
+
             } else {
                 Alert.alert('登录失败', '请检查您的用户名和密码。');
             }
@@ -24,6 +24,8 @@ function Login (){
     return(
         <View>
                 <TextInput ></TextInput>
+            <Text>登录</Text>
         </View>
     )
 }
+export  default Login
