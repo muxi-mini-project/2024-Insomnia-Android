@@ -13,11 +13,11 @@ function Page(){
       <NavigationContainer independent={true}>
           <Stack.Navigator>
               <Stack.Screen name="First" component={First}/>
-              <Stack.Screen name="SignUp" component={SignUp}/>
+              <Stack.Screen name="Signup" component={SignUp}/>
               <Stack.Screen name="Login" component={Login}/>
               <Stack.Screen name="Home" component={Home}/>
-              <Stack.Screen name="details" component={Details}/>
-              <Stack.Screen name="daily" component={Daily}/>
+              <Stack.Screen name="Details" component={Details}/>
+              <Stack.Screen name="Daily" component={Daily}/>
           </Stack.Navigator>
       </NavigationContainer>
     )

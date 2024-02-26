@@ -9,7 +9,7 @@ function First({navigation}){
                     <Image source={require('../assets/First-Login.png')} style={styles.button1}></Image>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        onPress={()=>{navigation.navigate('SignUp')}}>
+                        onPress={()=>{navigation.navigate('Signup')}}>
                         <Image source={require('../assets/First-Signup.png')} style={styles.button2}></Image>
                     </TouchableOpacity>
                 </ImageBackground>
