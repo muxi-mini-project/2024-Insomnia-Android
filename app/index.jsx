@@ -1,12 +1,12 @@
 
 import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import Details from "../components/Details";
-import Home from "../components/Home";
-import Daily from "../components/daily";
-import First from "../components/First";
-import SignUp from "../components/SignUp";
-import Login from "../components/Login";
+import Details from "./pages/Details";
+import Home from "./pages/Home";
+import Daily from "./pages/daily";
+import First from "./pages/First";
+import SignUp from "./pages/SignUp";
+import Login from "./pages/Login";
 const Stack =createNativeStackNavigator()
 function Page(){
     return(
