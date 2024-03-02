@@ -3,7 +3,7 @@ import {Text, View} from "react-native";
 function Details (){
     return(
         <View>
-            <Text>111</Text>
+            <Text>222</Text>
         </View>
     )
 }

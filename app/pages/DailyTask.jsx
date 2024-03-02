@@ -1,0 +1,43 @@
+export const dailyTasks=[
+    {
+        id:1,title:'泡个脚吧',image:require('../assets/Dailytask/1.png')
+    },
+    {
+        id:2,title:'24：00之前睡觉',image:require('../assets/Dailytask/2.png')
+    },
+    {
+        id:3,title:'晚上不要点夜宵',image:require('../assets/Dailytask/3.png')
+    },
+    {
+        id:4,title:'间歇喝水',image:require('../assets/Dailytask/4.png')
+    },
+    {
+        id:5,title:'晚上做一次眼部按摩放松',image:require('../assets/Dailytask/5.png')
+    },
+    {
+        id:6,title:'吃一片维生素C含片',image:require('../assets/Dailytask/1.png')
+    },
+    {
+        id:7,title:'睡前听一首舒缓的音乐',image:require('../assets/Dailytask/2.png')
+    },
+    {
+        id:8,title:'发一篇树洞帖子',image:require('../assets/Dailytask/3.png')
+    },
+    {
+        id:9,title:'当天晚上睡8个小时以上',image:require('../assets/Dailytask/4.png')
+    },
+    {
+        id:10,title:'什么都不做！',image:require('../assets/Dailytask/5.png')
+    },
+    {
+        id:11,title:'和好朋友谈谈心',image:require('../assets/Dailytask/1.png')
+    },
+    {
+        id:12,title:'看一本治愈的书或一篇文章',image:require('../assets/Dailytask/2.png')
+    },
+    {
+        id:13,title:'睡前喝一杯热牛奶',image:require('../assets/Dailytask/3.png')
+    },
+
+
+]
