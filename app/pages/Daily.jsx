@@ -11,16 +11,19 @@ import {
 import {useState} from "react";
 import {dailyTasks} from "./DailyTask";
 
-function Daily() {
+function Daily({navigation}) {
     return(
-        <View style={{flex:1,justifyContent:'center'}}>
+        <View style={{flex:1,justifyContent:'center',position:'relative'}}>
             <ImageBackground source={require('../assets/DailyBackground.png')} style={styles.background}>
+                <TouchableOpacity onPress={()=>{navigation.navigate('Home')}}>
+                    <Image source={require('../assets/DailyBack.png')} style={styles.backButton}></Image>
+                </TouchableOpacity>
                 <ScrollView style={styles.dailyContainer}>
                     <View>
                         {dailyTasks.map(
                             dailyTask=>(
                               <View style={styles.dailyTaskContainer}>
-                                  <TouchableOpacity key={dailyTask.id}>
+                                  <TouchableOpacity key={dailyTask.id} onPress={()=>{navigation.navigate('DailyDetail')}}>
                                       <Image source={dailyTask.image} style={styles.dailyImg}>
                                       </Image>
                                   </TouchableOpacity>
@@ -45,11 +48,18 @@ const styles =StyleSheet.create(
             width: '100%',
             height: '100%',
             justifyContent: 'center',
-            alignItems: 'center',
             flex: 1
         },
         dailyContainer:{
             marginTop:windowHeight*0.2
+        },
+        backButton:{
+            width:windowWidth*0.24,
+            height:windowHeight*0.08,
+            resizeMode:'stretch',
+            position:'absolute',
+            top:0,
+            left:1
         },
 
         dailyTaskContainer:{

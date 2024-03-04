@@ -34,9 +34,7 @@ function Login ({navigation}) {
         setPassword(text)
         checkInputs();
     }
-
-
- /*   const handleLogin = () => {
+    const handleLogin = () => {
         // 发送POST请求到后端验证
         axios.post('http://your-backend-api/login', {
             email:email,
@@ -57,7 +55,7 @@ function Login ({navigation}) {
                 console.error('登录失败', error);
                 Alert.alert('登录失败', '发生了一个错误，请稍后重试。');
             });
-    }*/
+    }
     return (
         <View style={{flex:1,justifyContent:'center'}}>
             <ImageBackground source={require('../assets/LoginBackground.png')} style={styles.background}>
@@ -77,14 +75,18 @@ function Login ({navigation}) {
                     onChangeText={handlePasswordChange}
                     secureTextEntry={true}
                 />
-                <Text></Text>
+                <View style={styles.buttonContainer}>
                 <Text style={styles.ClickSign} onPress={() => navigation.navigate('Signup')}>还没有账号</Text>
                 <TouchableOpacity
                     disabled={loginDisabled}
+
                     //等接口好了换成handleLogin
-                    onPress={()=>{navigation.navigate('Home')}}>
-                    <Image source={require('../assets/LoginButton.png')}></Image>
+                 onPress={()=>{navigation.navigate('Home')}}
+
+                >
+                    <Image source={require('../assets/LoginButton.png')} style={styles.LoginButton}></Image>
                 </TouchableOpacity>
+                </View>
             </ImageBackground>
         </View>
     );
@@ -107,15 +109,30 @@ const styles = StyleSheet.create({
         borderColor: 'white',
         fontSize: 20,
         marginTop: windowHeight * 0.1,
-
+        borderWidth:1,
+        width:windowWidth*0.5
     },
     password: {
+        borderRadius: windowWidth * 0.02,
         color: 'white',
+        borderColor: 'white',
         fontSize: 20,
-        marginTop: windowHeight * 0.01
+        borderWidth:1,
+        marginTop: windowHeight * 0.01,
+        width:windowWidth*0.5
+    },
+    LoginButton:{
+        width:windowWidth*0.25,
+        height:windowHeight*0.08,
+        resizeMode:"stretch",
+        marginLeft:windowWidth*0.15
+    },
+    buttonContainer:{
+        flexDirection:"row"
     },
     ClickSign: {
-        color: 'white'
+        color: 'white',
+        marginTop:windowWidth*0.05
     },
     img: {
         width: windowWidth * 0.6,

@@ -12,11 +12,11 @@ import {
     Pressable, TouchableOpacity
 } from 'react-native';
 
-const SignUp = (navigation) => {
+const SignUp = ({navigation}) => {
     const [email, setEmail] = useState('');
     const [verificationCode, setVerificationCode] = useState('');
     const [password, setPassword] = useState('')
-/*//发送验证
+//发送验证
     const handleSendVerificationCode = () => {
         fetch('http://8.130.69.161:8080/api/v1/common/sendEmail', {
             method: 'POST',
@@ -39,12 +39,12 @@ const SignUp = (navigation) => {
     };
 //验证验证码
     const handleRegister = () => {
-        fetch('http://8.130.69.161:8080/api/v1/common/sendEmail', {
+        fetch('http://8.130.69.161:8080/api/v1/common/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ email, verificationCode }),
+            body: JSON.stringify({ email, verificationCode ,password }),
         })
             .then(response => {
                 if (response.ok) {
@@ -57,7 +57,7 @@ const SignUp = (navigation) => {
                 console.error('Error verifying code:', error);
                 Alert.alert('Error', 'Failed to verify verification code. Please try again later.');
             });
-    };*/
+    };
 
     return (
         <View style={{flex:1,justifyContent:'center'}}>
@@ -72,7 +72,9 @@ const SignUp = (navigation) => {
                 style={styles.email}
             placeholderTextColor='white'
             />
-                    <Pressable  style={styles.emailButton}>
+                    <Pressable  style={styles.emailButton}
+                                //改成handleSendVerificationCode
+                                >
                         <Text style={{justifyContent:"center",
                         alignItems:"center",
                             margin:"auto"
@@ -92,7 +94,10 @@ const SignUp = (navigation) => {
                        placeholderTextColor='white'
                        style={styles.password}></TextInput>
 
-                <TouchableOpacity onPress={()=>{navigation.navigate('Login')}}>
+                <TouchableOpacity
+                    //onPress={handleRegister}
+                onPress={()=>{navigation.navigate('Login')}}
+                >
                     <Image source={require('../assets/SignupButton.png')} style={styles.signupButton}></Image>
                 </TouchableOpacity>
 
