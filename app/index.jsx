@@ -1,22 +1,19 @@
 import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import Details from "./pages/Details";
-import Home from "./pages/Home";
-import Daily from "./pages/daily";
-import First from "./pages/First";
-import SignUp from "./pages/SignUp";
-import Login from "./pages/Login";
+import Details from "./pages/details/details";
+import Home from "./pages/home/home";
+import Daily from "./pages/daily/daily";
+import First from "./pages/first/first";
+import SignUp from "./pages/signup/signUp";
+import Login from "./pages/login/login";
+import Conversation from "./pages/conversation/conversation";
 const Stack =createNativeStackNavigator()
 function Page(){
     return(
       <NavigationContainer independent={true}>
           <Stack.Navigator>
-              <Stack.Screen name="First" component={First}/>
-              <Stack.Screen name="Signup" component={SignUp}/>
-              <Stack.Screen name="Login" component={Login}/>
-              <Stack.Screen name="Home" component={Home}/>
-              <Stack.Screen name="Details" component={Details}/>
-              <Stack.Screen name="Daily" component={Daily}/>
+              <Stack.Screen name="Conversation" component={Conversation}></Stack.Screen>
+
           </Stack.Navigator>
       </NavigationContainer>
     )
