@@ -1,0 +1,20 @@
+import {Dimensions, Image, ImageBackground, TouchableOpacity, View,StyleSheet} from "react-native";
+
+function First({navigation}){
+    return(
+        <View style={{flex:1,justifyContent:'center'}}>
+                <ImageBackground source={require('/app/assets/img/First-1.png')} style={styles.backGround}>
+                    <TouchableOpacity
+        onPress={()=>{navigation.navigate('Login')}}>
+                    <Image source={require('/app/assets/img/First-Login.png')} style={styles.button1}></Image>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={()=>{navigation.navigate('Signup')}}>
+                        <Image source={require('/app/assets/img/First-Signup.png')} style={styles.button2}></Image>
+                    </TouchableOpacity>
+                </ImageBackground>
+        </View>
+    )
+}
+
+export  default First
