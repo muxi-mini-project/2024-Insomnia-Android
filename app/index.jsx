@@ -8,6 +8,7 @@ import First from "./pages/First";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import DailyDetail from "./pages/DailyDetail";
+import Mine from "./pages/Mine";
 const Stack =createNativeStackNavigator()
 function Page(){
     return(
@@ -20,6 +21,7 @@ function Page(){
               <Stack.Screen name="Details" component={Details}/>
               <Stack.Screen name="Daily" component={Daily}/>
               <Stack.Screen name="DailyDetail" component={DailyDetail}/>
+              <Stack.Screen name="Mine" component={Mine}/>
           </Stack.Navigator>
       </NavigationContainer>
     )
