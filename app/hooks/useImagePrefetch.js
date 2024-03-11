@@ -11,5 +11,5 @@ export const useImagePrefetch = (imageURIs=[""]) => {
                 console.error('Failed to prefetch image:', error);
             });
         });
-    }, []);
+    }, [])
 }

@@ -61,8 +61,8 @@ const SignUp = ({navigation}) => {
 
     return (
         <View style={{flex:1,justifyContent:'center'}}>
-            <ImageBackground source={require('/app/assets/img/SignBackground.png')} style={styles.background}>
-                <Image source={require('/app/assets/img/Signup.png')} style={styles.img}></Image>
+            <ImageBackground source={require('../../assets/img/SignBackground.png')} style={styles.background}>
+                <Image source={require('../../assets/img/Signup.png')} style={styles.img}></Image>
                 <View style={styles.container}>
             <TextInput
                 value={email}
@@ -98,7 +98,7 @@ const SignUp = ({navigation}) => {
                     //onPress={handleRegister}
                 onPress={()=>{navigation.navigate('Login')}}
                 >
-                    <Image source={require('/app/assets/SignupButton.png')} style={styles.signupButton}></Image>
+                    <Image source={require('../../assets/SignupButton.png')} style={styles.signupButton}></Image>
                 </TouchableOpacity>
 
             </ImageBackground>
