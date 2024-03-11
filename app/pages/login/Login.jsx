@@ -56,7 +56,7 @@ function Login ({navigation}) {
     }
     return (
         <View style={{flex:1,justifyContent:'center'}}>
-            <ImageBackground source={require('/app/assets/img/LoginBackground.png')} style={styles.background}>
+            <ImageBackground source={require('../../assets/img/LoginBackground.png')} style={styles.background}>
                 <Image source={require('../../assets/img/Login.png')} style={styles.img}></Image>
                 <TextInput
                     style={styles.username}

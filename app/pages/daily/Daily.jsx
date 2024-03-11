@@ -8,7 +8,6 @@ import {
     TouchableOpacity,
     View
 } from "react-native";
-import bg from '/app/assets/DailyDetailsBackground.png'
 import {useEffect, useState} from "react";
 import {dailyTasks} from "../DailyTask";
 
@@ -24,9 +23,9 @@ function Daily({navigation}) {
     };
     return(
         <View style={{flex:1,justifyContent:'center',position:'relative'}}>
-            <ImageBackground source={bg} style={styles.background}>
+            <ImageBackground source={require('../../assets/DailyDetailsBackground.png')} style={styles.background}>
                 <TouchableOpacity onPress={()=>{navigation.navigate('Home')}}>
-                    <Image source={require('/app/assets/DailyBack.png')} style={styles.backButton}></Image>
+                    <Image source={require('../../assets/DailyBack.png')} style={styles.backButton}></Image>
                 </TouchableOpacity>
                 <View>
                     <Text>已完成任务数:{completedTasksCount}</Text>
