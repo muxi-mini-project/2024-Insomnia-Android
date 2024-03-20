@@ -1,6 +1,6 @@
 import { Text } from 'react-native';
 
-function Mine() {
+function NightSaying() {
   return <Text>111</Text>;
 }
-export default Mine;
+export default NightSaying;
