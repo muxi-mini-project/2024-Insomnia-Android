@@ -10,6 +10,7 @@ import DailyDetail from './pages/DailyDetail/DailyDetail';
 import Mine from './pages/mine/Mine';
 import { TasksProvider } from './pages/DailyDetail/TasksContext';
 import Forum from './pages/forum/forum';
+import CreateMessage from './pages/forum/createMessage/createMessage';
 const Stack = createNativeStackNavigator();
 function Page() {
   return (
@@ -24,6 +25,7 @@ function Page() {
         <Stack.Screen name="Mine" component={Mine} />
         <Stack.Screen name="Conversation" component={Conversation} />
         <Stack.Screen name="Daily" component={Daily} />
+        <Stack.Screen name="CreateMessage" component={CreateMessage} />
       </Stack.Navigator>
     </NavigationContainer>
   );

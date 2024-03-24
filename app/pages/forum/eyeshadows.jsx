@@ -1,5 +1,5 @@
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 function Eyeshadows() {
-  return <Text>熬夜树洞</Text>;
+  return <View></View>;
 }
 export default Eyeshadows;

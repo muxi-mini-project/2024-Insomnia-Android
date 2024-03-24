@@ -1,7 +1,7 @@
 import { Dimensions, StyleSheet } from 'react-native';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
-const forum_styles = StyleSheet.create({
+const styles = StyleSheet.create({
   bk: {
     width: '100%',
     height: '100%',
@@ -22,5 +22,10 @@ const forum_styles = StyleSheet.create({
     height: windowHeight * 0.1,
     borderRadius: 15,
   },
+  sumButton: {
+    resizeMode: 'stretch',
+    width: windowWidth * 0.2,
+    height: windowHeight * 0.2,
+  },
 });
-export default forum_styles;
+export default styles;
