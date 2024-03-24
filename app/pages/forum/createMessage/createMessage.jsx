@@ -10,7 +10,6 @@ import {
 import { Picker } from '@react-native-picker/picker';
 import { useState } from 'react';
 import styles from './createMessage_style';
-import { saveCurrentTime } from '../../../utils/saveCurrentTime';
 
 function CreateMessage({ navigation }) {
   const [value, setValue] = useState('熬夜树洞');
@@ -22,7 +21,6 @@ function CreateMessage({ navigation }) {
       title: topic,
       content: text,
     };
-
     try {
       const response = await fetch('https://your-api-url.com/messages', {
         method: 'POST',
