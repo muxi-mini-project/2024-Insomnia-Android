@@ -37,6 +37,7 @@ function MessagesList({ topic, time, username, text }) {
         source={MessagesBg}
         style={styles.textBackground}
       >
+
         <Text style={styles.topic}>标题标题标题标题</Text>
         <View style={styles.textcontainer}>
           <Text style={styles.name}>用户名用户名 </Text>
