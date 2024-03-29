@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
   Image,
   ImageBackground,
@@ -5,17 +6,24 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { useState } from 'react';
 import styles from './MessagesList_style';
+// 引入图片资源
+import MessagesBg from '../../../assets/forum/Messages.png';
+import createMessagesIcon from '../../../assets/forum/createMessages.png';
+import goodIcon from '../../../assets/forum/good.png';
+
 function MessagesList({ topic, time, username, text }) {
   const [messagesCount, setMessagesCount] = useState(0);
   const [goodCount, setGoodCount] = useState(0);
+
   const handleMessage = () => {
     setMessagesCount(messagesCount + 1);
   };
+
   const handleGood = () => {
     setGoodCount(goodCount + 1);
   };
+
   return (
     <View
       style={{
@@ -26,7 +34,7 @@ function MessagesList({ topic, time, username, text }) {
       }}
     >
       <ImageBackground
-        source={require('../../../assets/forum/Messages.png')}
+        source={MessagesBg}
         style={styles.textBackground}
       >
         <Text style={styles.topic}>标题标题标题标题</Text>
@@ -40,14 +48,14 @@ function MessagesList({ topic, time, username, text }) {
         <View style={styles.messagescontainer}>
           <TouchableOpacity onPress={handleMessage}>
             <Image
-              source={require('../../../assets/forum/createMessages.png')}
+              source={createMessagesIcon}
               style={styles.image}
             />
           </TouchableOpacity>
           <Text style={styles.counts}>{messagesCount}</Text>
           <TouchableOpacity onPress={handleGood}>
             <Image
-              source={require('../../../assets/forum/good.png')}
+              source={goodIcon}
               style={styles.image}
             />
           </TouchableOpacity>
@@ -57,4 +65,5 @@ function MessagesList({ topic, time, username, text }) {
     </View>
   );
 }
+
 export default MessagesList;

@@ -1,6 +1,10 @@
 import { Image, ImageBackground, TouchableOpacity, View } from 'react-native'
 import bg from '../../assets/homeBackground.png'
 import styles from './home_style';
+import home1 from '../../assets/img/home-1.png'
+import home2 from '../../assets/img/home-2.png'
+import home3 from '../../assets/img/home-3.png'
+import person from '../../assets/person.png'
 function Home({ navigation }) {
   return (
     <View
@@ -18,25 +22,25 @@ function Home({ navigation }) {
       >
         <TouchableOpacity onPress={() => navigation.navigate('Daily')}>
           <Image
-            source={require('../../assets/img/home-1.png')}
+            source={home1}
             style={styles.button1}
           ></Image>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('Forum')}>
           <Image
-            source={require('../../assets/img/home-2.png')}
+            source={home2}
             style={styles.button2}
           ></Image>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('Mine')}>
           <Image
-            source={require('../../assets/img/home-3.png')}
+            source={home3}
             style={styles.button3}
           ></Image>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('Conversation')}>
           <Image
-            source={require('../../assets/person.png')}
+            source={person}
             style={styles.person}
           />
         </TouchableOpacity>

@@ -11,6 +11,9 @@ import {
   Pressable,
   TouchableOpacity,
 } from 'react-native';
+import SignBackground from  '../../assets/img/SignBackground.png'
+import Signup from '../../assets/img/Signup.png'
+import SignupButton from '../../assets/SignupButton.png'
 
 const SignUp = ({ navigation }) => {
   const [email, setEmail] = useState('');
@@ -56,17 +59,17 @@ const SignUp = ({ navigation }) => {
       body: JSON.stringify({ email, verificationCode, password }),
     })
       .then((response) => {
-        if (response.ok) {
-          Alert.alert('Success', 'Registration successful.');
+        if (response.data.code===1000) {
+          Alert.alert('成功', '注册成功');
         } else {
-          Alert.alert('Error', 'sb');
+          Alert.alert('错误', '注册失败');
         }
       })
       .catch((error) => {
-        console.error('Error verifying code:', error);
+        console.error('错误的验证码', error);
         Alert.alert(
-          'Error',
-          'Failed to verify verification code. Please try again later.'
+          '错误',
+          '失败的验证码'
         );
       });
   };
@@ -74,11 +77,11 @@ const SignUp = ({ navigation }) => {
   return (
     <View style={{ flex: 1, justifyContent: 'center' }}>
       <ImageBackground
-        source={require('../../assets/img/SignBackground.png')}
+        source={SignBackground}
         style={styles.background}
       >
         <Image
-          source={require('../../assets/img/Signup.png')}
+          source={Signup}
           style={styles.img}
         ></Image>
         <View style={styles.container}>
@@ -126,7 +129,7 @@ const SignUp = ({ navigation }) => {
           onPress={handleRegister}
         >
           <Image
-            source={require('../../assets/SignupButton.png')}
+            source={SignupButton}
             style={styles.signupButton}
           ></Image>
         </TouchableOpacity>
