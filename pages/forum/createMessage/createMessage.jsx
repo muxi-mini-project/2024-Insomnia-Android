@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
   Alert,
   Image,
@@ -8,20 +9,23 @@ import {
   View,
 } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
-import { useState } from 'react';
 import styles from './createMessage_style';
+// 引入图片资源
+import setbkImg from '../../../assets/forum/setbk.png';
+import pickbkImg from '../../../assets/forum/pickbk.png';
+import topicbkImg from '../../../assets/forum/topicbk.png';
+import textbkImg from '../../../assets/forum/textbk.png';
+import setoutImg from '../../../assets/forum/setout.png';
 
 function CreateMessage({ navigation }) {
   const [value, setValue] = useState('熬夜树洞');
   const [topic, setTopic] = useState('');
   const [text, setText] = useState('');
+
   const handleCreate = async () => {
     const headers = new Headers({
       'Content-Type': 'application/json',
     });
-    if (isToken) {
-    }
-
     const messageData = {
       category: value,
       title: topic,
@@ -48,29 +52,27 @@ function CreateMessage({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center' }}>
       <ImageBackground
-        source={require('../../../assets/forum/setbk.png')}
+        source={setbkImg}
         style={styles.background}
       >
         <Text style={styles.topic}>欢迎来到夜猫栖息地！</Text>
         <Text style={styles.text}>
-          熬夜树洞用于倾诉心事 月夜心语用于夜晚文学创作
+          熬夜树洞用于倾诉心事，月夜心语用于夜晚文学创作
         </Text>
         <ImageBackground
-          source={require('../../../assets/forum/pickbk.png')}
+          source={pickbkImg}
           style={styles.picker}
         >
           <Picker
             selectedValue={value}
-            onValueChange={(itemValue, itemIndex) => {
-              setValue(itemValue);
-            }}
+            onValueChange={(itemValue, itemIndex) => setValue(itemValue)}
           >
             <Picker.Item label="熬夜树洞" value="熬夜树洞" />
             <Picker.Item label="月夜心语" value="月夜心语" />
           </Picker>
         </ImageBackground>
         <ImageBackground
-          source={require('../../../assets/forum/topicbk.png')}
+          source={topicbkImg}
           style={styles.topictext}
         >
           <TextInput
@@ -80,25 +82,25 @@ function CreateMessage({ navigation }) {
             placeholderTextColor="white"
             style={styles.textinput}
             maxLength={16}
-          ></TextInput>
+          />
         </ImageBackground>
         <ImageBackground
-          source={require('../../../assets/forum/textbk.png')}
+          source={textbkImg}
           style={styles.texts}
         >
           <TextInput
             value={text}
             onChangeText={setText}
-            placeholder=" 添加正文 (熬夜树洞在500字以内，月夜心语1500字以内)"
+            placeholder="添加正文 (熬夜树洞在500字以内，月夜心语1500字以内)"
             placeholderTextColor="white"
             maxLength={value === '熬夜树洞' ? 500 : 1500}
             multiline={true}
             style={styles.texting}
-          ></TextInput>
+          />
         </ImageBackground>
         <TouchableOpacity onPress={handleCreate}>
           <Image
-            source={require('../../../assets/forum/setout.png')}
+            source={setoutImg}
             style={styles.button}
           />
         </TouchableOpacity>
@@ -106,4 +108,6 @@ function CreateMessage({ navigation }) {
     </View>
   );
 }
+
 export default CreateMessage;
+

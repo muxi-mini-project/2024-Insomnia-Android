@@ -9,13 +9,15 @@ import {
 import { dailyTasks } from '../DailyDetail/DailyTask';
 import { useTasks } from '../DailyDetail/TasksContext';
 import styles from './daily_style';
+import DailyBack from '../../assets/DailyBack.png'
+import DailyDetailsBackground from '../../assets/DailyBackground.png'
 function Daily({ navigation }) {
   const { tasks } = useTasks(); // 从Context获取任务列表
   const completedTasksCount = tasks.filter((task) => task.completed).length;
   return (
     <View style={{ flex: 1, justifyContent: 'center', position: 'relative' }}>
       <ImageBackground
-        source={require('../../assets/DailyDetailsBackground.png')}
+        source={DailyDetailsBackground}
         style={styles.background}
       >
         <TouchableOpacity
@@ -24,7 +26,7 @@ function Daily({ navigation }) {
           }}
         >
           <Image
-            source={require('../../assets/DailyBack.png')}
+            source={DailyBack}
             style={styles.backButton}
           ></Image>
         </TouchableOpacity>

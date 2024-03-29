@@ -13,6 +13,9 @@ import {
 import axios from 'axios';
 import { log } from 'expo/build/devtools/logger';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import LoginBackground from '../../assets/img/LoginBackground.png'
+import Login1 from '../../assets/img/Login.png'
+import LoginButton from '../../assets/LoginButton.png'
 
 function Login({ navigation }) {
   const [email, setEmail] = useState('');
@@ -70,11 +73,11 @@ function Login({ navigation }) {
   return (
     <View style={{ flex: 1, justifyContent: 'center' }}>
       <ImageBackground
-        source={require('../../assets/img/LoginBackground.png')}
+        source={LoginBackground}
         style={styles.background}
       >
         <Image
-          source={require('../../assets/img/Login.png')}
+          source={Login1}
           style={styles.img}
         ></Image>
         <TextInput
@@ -102,13 +105,13 @@ function Login({ navigation }) {
           <TouchableOpacity
             disabled={loginDisabled}
             //等接口好了换成handleLogin
-            /* onPress={() => {
+             onPress={() => {
               navigation.navigate('Home');
-            }}*/
-            onPress={handleLogin}
+            }}
+           /* onPress={handleLogin}*/
           >
             <Image
-              source={require('../../assets/LoginButton.png')}
+              source={LoginButton}
               style={styles.LoginButton}
             ></Image>
           </TouchableOpacity>

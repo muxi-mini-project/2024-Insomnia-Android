@@ -2,28 +2,33 @@ import React, { useState } from 'react';
 import { View, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import Eyeshadows from './eyeshadows';
 import Nightsaying from './nightsaying';
-// 确保路径正确
 import styles from './forum_styles';
+// 引入图片资源
+import backgroundImg from '../../assets/forum/background.png';
+import eyeshadowsImg from '../../assets/forum/eyeshadows.png';
+import nightsayingImg from '../../assets/forum/nightsaying.png';
+import sumImg from '../../assets/forum/sum.png';
+
 const Forum = ({ navigation }) => {
   const [currentContent, setCurrentContent] = useState('eyeshadows');
 
   return (
     <View style={{ flex: 1, justifyContent: 'center' }}>
       <ImageBackground
-        source={require('../../assets/forum/background.png')}
+        source={backgroundImg}
         style={styles.bk}
       >
         <View style={styles.ButtonContainer}>
           <TouchableOpacity onPress={() => setCurrentContent('eyeshadows')}>
             <Image
               style={styles.button1}
-              source={require('../../assets/forum/eyeshadows.png')}
+              source={eyeshadowsImg}
             />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => setCurrentContent('nightsaying')}>
             <Image
               style={styles.button2}
-              source={require('../../assets/forum/nightsaying.png')}
+              source={nightsayingImg}
             />
           </TouchableOpacity>
         </View>
@@ -34,7 +39,7 @@ const Forum = ({ navigation }) => {
           }}
         >
           <Image
-            source={require('../../assets/forum/sum.png')}
+            source={sumImg}
             style={styles.sumButton}
           />
         </TouchableOpacity>

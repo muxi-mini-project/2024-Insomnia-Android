@@ -13,7 +13,10 @@ import { dailyTasks } from './DailyTask';
 import { useState } from 'react';
 import styles from './DailyDetail_style';
 import { useTasks } from './TasksContext';
-
+import DailyBackground from '../../assets/DailyBackground.png'
+import DailyDetailsBackground from '../../assets/DailyDetailsBackground.png'
+import DeleteButton from '../../assets/DeleteButton.png'
+import FinishButton from '../../assets/FinishButon.png'
 function DailyDetail({ navigation, route }) {
   const { taskId } = route.params;
   const { tasks, markTaskAsCompleted } = useTasks();
@@ -27,11 +30,11 @@ function DailyDetail({ navigation, route }) {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
         <ImageBackground
-          source={require('../../assets/DailyBackground.png')}
+          source={DailyBackground}
           style={styles.background}
         >
           <ImageBackground
-            source={require('../../assets/DailyDetailsBackground.png')}
+            source={DailyDetailsBackground}
             style={styles.detailBackground}
           >
             <TouchableOpacity
@@ -40,14 +43,14 @@ function DailyDetail({ navigation, route }) {
               }}
             >
               <Image
-                source={require('../../assets/DeleteButton.png')}
+                source={DeleteButton}
                 style={styles.deleteButton}
               ></Image>
             </TouchableOpacity>
             <Text style={styles.title}>未找到该任务</Text>
             <TouchableOpacity>
               <Image
-                source={require('../../assets/FinishButon.png')}
+                source={FinishButton}
                 style={styles.finishButton}
               ></Image>
             </TouchableOpacity>
@@ -59,11 +62,11 @@ function DailyDetail({ navigation, route }) {
   return (
     <View style={{ flex: 1, justifyContent: 'center' }}>
       <ImageBackground
-        source={require('../../assets/DailyBackground.png')}
+        source={DailyBackground}
         style={styles.background}
       >
         <ImageBackground
-          source={require('../../assets/DailyDetailsBackground.png')}
+          source={DailyDetailsBackground}
           style={styles.detailBackground}
         >
           <TouchableOpacity
@@ -72,7 +75,7 @@ function DailyDetail({ navigation, route }) {
             }}
           >
             <Image
-              source={require('../../assets/DeleteButton.png')}
+              source={DeleteButton}
               style={styles.deleteButton}
             ></Image>
           </TouchableOpacity>
@@ -80,7 +83,7 @@ function DailyDetail({ navigation, route }) {
           <Text style={styles.details}>{task.details}</Text>
           <TouchableOpacity onPress={AsCompleted}>
             <Image
-              source={require('../../assets/FinishButon.png')}
+              source={FinishButton}
               style={styles.finishButton}
             ></Image>
           </TouchableOpacity>
