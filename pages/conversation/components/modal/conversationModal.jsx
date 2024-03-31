@@ -90,9 +90,9 @@ export const Questions = ({questionInfo, onSelected, show, currentPick={nextID:"
     return (
         <ConversationModal modalShow={show}>
             {!currentPick.nextID
-                ? (<Text style={{fontFamily: "pml", fontSize: 34}}>{randomPickFromArray(currentPick.reply)}</Text>)
+                ? (<Text style={{ fontSize: 34}}>{randomPickFromArray(currentPick.reply)}</Text>)
                 : (<>
-                    <Text style={{fontFamily: "pml", fontSize: 34}}>{question}</Text>
+                    <Text style={{ fontSize: 34}}>{question}</Text>
                     {replies.length &&
                         <View style={styles.conversationButtonWrap}>
                             {replies.map(item=>(<Button title={item.option} key={key.next().value} onClick={()=> handleClick(item)}></Button>))}
