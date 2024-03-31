@@ -1,40 +1,31 @@
-import { ImageBackground } from 'react-native';
-import { useState } from 'react';
+import { ImageBackground, View } from 'react-native'
+import { useState } from 'react'
 import {
-  ChainedModal,
-  NoReplyModal,
-} from './components/modal/conversationModal';
-import styles from './conversation_style';
-import { imageList } from './conversation.config';
-import { useImagePrefetch } from '../../hooks/useImagePrefetch';
-import * as SplashScreen from 'expo-splash-screen';
-
-SplashScreen.preventAutoHideAsync().then(null, null);
+   ChainedModal,
+   NoReplyModal,
+} from './components/modal/conversationModal'
+import styles from './conversation_style'
+import witch from '../../assets/witch.png'
 const Conversation = () => {
-  const [updateQuestion, setUpdateQuestion] = useState(false);
-  const [noReply, setNoReply] = useState(true);
+   const [updateQuestion, setUpdateQuestion] = useState(false)
+   const [noReply, setNoReply] = useState(true)
+   const handleEndReply = () => {
+      setNoReply(true)
+   }
+   return (
+      <>
+         <ImageBackground style={styles.witch} source={witch}>
+            {noReply ? (
+               <NoReplyModal></NoReplyModal>
+            ) : (
+               <ChainedModal
+                  update={updateQuestion}
+                  onEnd={handleEndReply}
+               ></ChainedModal>
+            )}
+         </ImageBackground>
+      </>
+   )
+}
 
-  useImagePrefetch(Object.values(imageList));
-  const handleEndReply = () => {
-    setNoReply(true);
-  };
-  return (
-    <>
-      <ImageBackground
-        style={{ ...styles.witch }}
-        source={{ uri: imageList.witch }}
-      >
-        {noReply ? (
-          <NoReplyModal></NoReplyModal>
-        ) : (
-          <ChainedModal
-            update={updateQuestion}
-            onEnd={handleEndReply}
-          ></ChainedModal>
-        )}
-      </ImageBackground>
-    </>
-  );
-};
-
-export default Conversation;
+export default Conversation

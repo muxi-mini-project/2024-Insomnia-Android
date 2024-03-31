@@ -47,14 +47,12 @@ export const ChainedModal = ({update, onEnd}) => {
         }
     }
     return (
-        <View>
             <Questions
                 questionInfo={QuestionList[currentQuestionID || '1']}
                 onSelected={handleSelect}
                 show={show}
                 currentPick={currentPick}
             ></Questions>
-        </View>
     )
 }
 
@@ -77,9 +75,7 @@ export const NoReplyModal = () => {
         return () => clearInterval(intervalId);
     }, [])
     return (
-        <View>
-            <Questions questionInfo={QuestionList[questionID]} show={show}></Questions>
-        </View>
+       <Questions questionInfo={QuestionList[questionID]} show={show}></Questions>
     )
 }
 export const Questions = ({questionInfo, onSelected, show, currentPick={nextID:"1",reply:[], option:""}}) => {
@@ -90,9 +86,9 @@ export const Questions = ({questionInfo, onSelected, show, currentPick={nextID:"
     return (
         <ConversationModal modalShow={show}>
             {!currentPick.nextID
-                ? (<Text style={{ fontSize: 34}}>{randomPickFromArray(currentPick.reply)}</Text>)
+                ? (<Text style={styles.text}>{randomPickFromArray(currentPick.reply)}</Text>)
                 : (<>
-                    <Text style={{ fontSize: 34}}>{question}</Text>
+                    <Text style={styles.text}>{question}</Text>
                     {replies.length &&
                         <View style={styles.conversationButtonWrap}>
                             {replies.map(item=>(<Button title={item.option} key={key.next().value} onClick={()=> handleClick(item)}></Button>))}
