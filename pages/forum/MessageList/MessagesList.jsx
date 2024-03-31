@@ -36,13 +36,12 @@ function MessagesList({ title, time, username, text }) {
          <ImageBackground source={MessagesBg} style={styles.textBackground}>
             <Text style={styles.topic}>{title}</Text>
             <View style={styles.textcontainer}>
-               <Text style={styles.name}>用户名用户名 </Text>
                <Text style={styles.name}>{time}</Text>
             </View>
             <Text style={styles.text} numberOfLines={2}>
                {text}
             </Text>
-            <View style={styles.messagescontainer}>
+            {/*  <View style={styles.messagescontainer}>
                <TouchableOpacity onPress={handleMessage}>
                   <Image source={createMessagesIcon} style={styles.image} />
                </TouchableOpacity>
@@ -51,7 +50,7 @@ function MessagesList({ title, time, username, text }) {
                   <Image source={goodIcon} style={styles.image} />
                </TouchableOpacity>
                <Text style={styles.counts}>{goodCount}</Text>
-            </View>
+            </View>*/}
          </ImageBackground>
       </View>
    )

@@ -18,9 +18,10 @@ const styles = StyleSheet.create({
    username: {
       borderRadius: windowWidth * 0.02,
       color: 'white',
-      borderColor: 'white',
+
       fontSize: 20,
       marginTop: windowHeight * 0.1,
+      borderColor: 'white',
       borderWidth: 1,
       width: windowWidth * 0.5,
    },

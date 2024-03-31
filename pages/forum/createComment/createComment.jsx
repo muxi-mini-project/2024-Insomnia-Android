@@ -8,10 +8,7 @@ import {
    Button,
 } from 'react-native'
 import styles from '../createMessage/createMessage_style'
-import backgroundImg from '../../../assets/forum/background.png' // 假设这是您的背景图片路径
-
-// 假设的API URL，您需要根据实际情况进行替换
-const apiUrl = 'https://example.com/api/comments'
+import backgroundImg from '../../../assets/forum/background.png'
 
 function CreateComment() {
    const [comments, setComments] = useState([])
