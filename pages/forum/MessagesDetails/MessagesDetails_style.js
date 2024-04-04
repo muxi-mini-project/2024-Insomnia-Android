@@ -1,10 +1,11 @@
-import { StyleSheet } from 'react-native'
-
+import { Dimensions, StyleSheet } from 'react-native'
+const windowWidth = Dimensions.get('window').width
+const windowHeight = Dimensions.get('window').height
 const styles = StyleSheet.create({
    topic: {
-      fontSize: 26,
+      fontSize: 40,
    },
-   name: {
+   time: {
       fontSize: 20,
    },
    text: {
@@ -17,8 +18,12 @@ const styles = StyleSheet.create({
       alignItems: 'center',
    },
    messagesBackground: {
-      width: '100%',
-      height: '80%',
+      width: windowWidth,
+      height: windowHeight * 0.6,
+      borderRadius: 30,
+      overflow: 'hidden',
+      alignItems: 'center',
+      paddingTop: 10,
    },
 })
 export default styles

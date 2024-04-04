@@ -10,18 +10,18 @@ function MessagesDetails({ route }) {
    return (
       <View style={{ flex: 1 }}>
          <ImageBackground source={backgroundImg} style={styles.background}>
-            <ImageBackground
-               source={MessagesBg}
-               style={styles.messagesBackground}
-            >
-               <Text style={styles.topic}>{title}</Text>
-               <View style={styles.textcontainer}>
-                  <Text style={styles.name}>{time}</Text>
-               </View>
-               <Text style={styles.text} numberOfLines={2}>
-                  {text}
-               </Text>
-            </ImageBackground>
+            <View style={{ paddingTop: 15 }}>
+               <ImageBackground
+                  source={MessagesBg}
+                  style={styles.messagesBackground}
+               >
+                  <Text style={styles.topic}>{title}</Text>
+                  <View style={styles.textcontainer}>
+                     <Text style={styles.time}>{time}</Text>
+                  </View>
+                  <Text style={styles.text}>{text}</Text>
+               </ImageBackground>
+            </View>
          </ImageBackground>
       </View>
    )

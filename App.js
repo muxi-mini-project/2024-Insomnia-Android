@@ -12,6 +12,7 @@ import Daily from './pages/daily/Daily'
 import CreateMessage from './pages/forum/createMessage/createMessage'
 import Forum from './pages/forum/forum'
 import MessagesDetails from './pages/forum/MessagesDetails/MessagesDetails'
+import Chart from './pages/mine/Echarts/Echarts'
 const Stack = createNativeStackNavigator()
 function Page() {
    return (
