@@ -10,11 +10,12 @@ import {
    Image,
    Pressable,
    TouchableOpacity,
+   Button,
 } from 'react-native'
 import SignBackground from '../../assets/img/SignBackground.png'
 import Signup from '../../assets/img/Signup.png'
 import SignupButton from '../../assets/SignupButton.png'
-
+import styles from './signUp_style'
 const SignUp = ({ navigation }) => {
    const [email, setEmail] = useState('')
    const [verificationCode, setVerificationCode] = useState('')
@@ -80,14 +81,14 @@ const SignUp = ({ navigation }) => {
                />
                <Pressable
                   style={styles.emailButton}
-                  //改成handleSendVerificationCode
                   onPress={handleSendVerificationCode}
                >
                   <Text
                      style={{
-                        justifyContent: 'center',
+                        fontSize: 16,
+                        color: 'white',
                         alignItems: 'center',
-                        margin: 'auto',
+                        justifyContent: 'center',
                      }}
                   >
                      发送验证码
@@ -119,54 +120,5 @@ const SignUp = ({ navigation }) => {
       </View>
    )
 }
-const windowWidth = Dimensions.get('window').width
-const windowHeight = Dimensions.get('window').height
-const styles = StyleSheet.create({
-   background: {
-      width: '100%',
-      height: '100%',
-      justifyContent: 'center',
-      alignItems: 'center',
-      flex: 1,
-   },
-   img: {
-      width: windowWidth * 0.6,
-      height: windowHeight * 0.3,
-      resizeMode: 'stretch',
-   },
-   email: {
-      color: 'white',
-      borderColor: 'white',
-      fontSize: 20,
-      width: windowWidth * 0.5,
-      height: windowHeight * 0.05,
-      borderRadius: windowWidth * 0.05,
-   },
-   verificationCode: {
-      borderRadius: windowWidth * 0.02,
-      color: 'white',
-      borderColor: 'white',
-      fontSize: 20,
-      width: windowWidth * 0.5,
-   },
 
-   password: {
-      color: 'white',
-      fontSize: 20,
-      marginTop: windowHeight * 0.01,
-      width: windowWidth * 0.5,
-      borderRadius: windowWidth * 0.05,
-   },
-   container: {
-      flexDirection: 'row',
-      height: windowHeight * 0.05,
-      width: windowWidth * 0.5,
-   },
-   emailButton: {
-      height: windowHeight * 0.05,
-      width: windowWidth * 0.2,
-      backgroundColor: 'white',
-   },
-   signupButton: {},
-})
 export default SignUp

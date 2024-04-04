@@ -1,35 +1,13 @@
 import React from 'react'
-import { View, ScrollView } from 'react-native'
+import { View, ScrollView, TouchableOpacity } from 'react-native'
 import MessagesList from './MessageList/MessagesList'
-import styles from './forum_styles'
 import useFetchMessages from '../api/useFetchMessages'
-import Demo from './demo'
+import { useNavigation } from '@react-navigation/native'
+import Messages from './Messages'
 
-function NightSaying({ navigation }) {
+function NightSaying() {
    const messages = useFetchMessages('熬夜树洞')
-
-   return (
-      <View style={{ flex: 1 }}>
-         <ScrollView style={{ paddingTop: 10 }}>
-            {/*  {messages.map((message) => (
-               <MessagesList
-                  key={message.id}
-                  topic={message.topic}
-                  time={message.createdAt}
-                  text={message.body}
-               />
-            ))}*/}
-            <Demo />
-            <Demo />
-            <Demo />
-            <Demo />
-            <Demo />
-            <Demo />
-            <Demo />
-            <Demo />
-         </ScrollView>
-      </View>
-   )
+   return <Messages messages={messages} />
 }
 
 export default NightSaying
