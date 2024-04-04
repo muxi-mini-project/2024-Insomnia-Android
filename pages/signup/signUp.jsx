@@ -5,8 +5,6 @@ import {
    TextInput,
    Alert,
    ImageBackground,
-   StyleSheet,
-   Dimensions,
    Image,
    Pressable,
    TouchableOpacity,
@@ -46,23 +44,24 @@ const SignUp = ({ navigation }) => {
    }
    //验证验证码
    const handleRegister = () => {
-      fetch('http://8.130.69.161:8080/api/v1/auth/signup', {
+      fetch('https://8.130.69.161:8080/api/v1/auth/signup', {
          method: 'POST',
          headers: {
             'Content-Type': 'application/json',
          },
          body: JSON.stringify({ email, verificationCode, password }),
       })
-         .then((response) => {
-            if (response.data.code === 1000) {
-               Alert.alert('成功', '注册成功')
+         .then((response) => response.json())
+         .then((data) => {
+            if (data.code === 1000) {
+               Alert.alert('成功', data.message || '注册成功!')
             } else {
-               Alert.alert('错误', '注册失败')
+               Alert.alert('错误', data.message || '注册失败')
             }
          })
          .catch((error) => {
-            console.error('错误的验证码', error)
-            Alert.alert('错误', '失败的验证码')
+            console.error('请求错误', error)
+            Alert.alert('错误', '网络请求失败，请稍后再试')
          })
    }
 
@@ -87,9 +86,11 @@ const SignUp = ({ navigation }) => {
                      style={{
                         fontSize: 16,
                         color: 'white',
-                        alignItems: 'center',
-                        justifyContent: 'center',
+                        flex: 1,
+                        textAlign: 'center',
+                        textAlignVertical: 'center',
                      }}
+                     numberOfLines={1}
                   >
                      发送验证码
                   </Text>
@@ -108,6 +109,7 @@ const SignUp = ({ navigation }) => {
                placeholder="密码"
                placeholderTextColor="white"
                style={styles.password}
+               secureTextEntry={true}
             ></TextInput>
 
             <TouchableOpacity
