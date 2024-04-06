@@ -1,9 +1,22 @@
 import { Dimensions, View } from 'react-native'
 import { ECharts } from 'react-native-echarts-wrapper'
+import { useEffect, useState } from 'react'
+import postRequest from '../../api/postRequest'
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window')
 function Chart() {
+   const [datas, setDatas] = useState([])
+   useEffect(() => {
+      const fetchData = async () => {
+         try {
+            const data = await postRequest('task/getAllTask', {})
+            setDatas(data.data)
+         } catch (e) {
+            console.error(e)
+         }
+      }
+      fetchData()
+   }, [])
    const option = {
-      backgroundColor: 'transparent',
       title: {
          text: '本周熬夜任务完成情况',
          textStyle: {
@@ -31,17 +44,30 @@ function Chart() {
          },
       },
       yAxis: {
+         type: 'value',
+         min: 0,
+         max: 15,
+         interval: 3,
          axisLine: {
             lineStyle: {
                color: 'black',
             },
          },
       },
+      tooltip: {
+         show: true,
+         trigger: 'axis',
+         formatter: function (params) {
+            const param = params[0]
+            return param.name + ': ' + param.value + ' 个任务'
+         },
+      },
+
       series: [
          {
             name: '完成任务数',
             type: 'bar',
-            data: [5, 20, 36, 10, 10, 20, 10],
+            data: datas,
             itemStyle: {
                color: '#8E64DE',
             },
@@ -52,7 +78,7 @@ function Chart() {
       <View
          style={{
             flex: 1,
-            paddingTop: 20,
+            paddingTop: 15,
             alignItems: 'center',
             justifyContent: 'center',
          }}
