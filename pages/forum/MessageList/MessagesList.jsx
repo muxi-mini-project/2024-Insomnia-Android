@@ -12,7 +12,7 @@ import MessagesBg from '../../../assets/forum/Messages.png'
 import createMessagesIcon from '../../../assets/forum/createMessages.png'
 import goodIcon from '../../../assets/forum/good.png'
 
-function MessagesList({ title, time, username, text }) {
+function MessagesList({ title, time, text }) {
    const [messagesCount, setMessagesCount] = useState(0)
    const [goodCount, setGoodCount] = useState(0)
 

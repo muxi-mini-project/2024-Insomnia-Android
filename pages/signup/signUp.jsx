@@ -67,7 +67,12 @@ const SignUp = ({ navigation }) => {
 
    return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-         <ImageBackground source={SignBackground} style={styles.background}>
+         <ImageBackground
+            source={SignBackground}
+            syarn
+            add
+            react-native-image-pickertyle={styles.background}
+         >
             <Image source={Signup} style={styles.img}></Image>
             <View style={styles.container}>
                <TextInput
@@ -112,10 +117,7 @@ const SignUp = ({ navigation }) => {
                secureTextEntry={true}
             ></TextInput>
 
-            <TouchableOpacity
-               //onPress={handleRegister}
-               onPress={handleRegister}
-            >
+            <TouchableOpacity onPress={handleRegister}>
                <Image source={SignupButton} style={styles.signupButton}></Image>
             </TouchableOpacity>
          </ImageBackground>
