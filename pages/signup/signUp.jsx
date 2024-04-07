@@ -42,8 +42,7 @@ const SignUp = ({ navigation }) => {
             )
          })
    }
-   //验证验证码
-   const handleRegister = () => {
+   const handleRegisters = () => {
       fetch('https://8.130.69.161:8080/api/v1/auth/signup', {
          method: 'POST',
          headers: {
@@ -67,12 +66,7 @@ const SignUp = ({ navigation }) => {
 
    return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-         <ImageBackground
-            source={SignBackground}
-            syarn
-            add
-            react-native-image-pickertyle={styles.background}
-         >
+         <ImageBackground source={SignBackground} style={styles.background}>
             <Image source={Signup} style={styles.img}></Image>
             <View style={styles.container}>
                <TextInput
@@ -115,9 +109,8 @@ const SignUp = ({ navigation }) => {
                placeholderTextColor="white"
                style={styles.password}
                secureTextEntry={true}
-            ></TextInput>
-
-            <TouchableOpacity onPress={handleRegister}>
+            />
+            <TouchableOpacity onPress={handleRegisters}>
                <Image source={SignupButton} style={styles.signupButton}></Image>
             </TouchableOpacity>
          </ImageBackground>

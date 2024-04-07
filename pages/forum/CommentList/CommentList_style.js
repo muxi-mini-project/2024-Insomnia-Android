@@ -3,7 +3,7 @@ const windowWidth = Dimensions.get('window').width
 const windowHeight = Dimensions.get('window').height
 const styles = StyleSheet.create({
    container: {
-      height: windowHeight * 0.2,
+      minHeight: windowHeight * 0.1,
       margin: 10,
       borderWidth: 1,
       borderColor: 'black',

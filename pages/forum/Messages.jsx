@@ -33,5 +33,4 @@ function Messages({ messages }) {
       </View>
    )
 }
-
 export default Messages
