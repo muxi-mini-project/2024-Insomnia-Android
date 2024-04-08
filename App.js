@@ -12,13 +12,13 @@ import Daily from './pages/daily/Daily'
 import CreateMessage from './pages/forum/createMessage/createMessage'
 import Forum from './pages/forum/forum'
 import MessagesDetails from './pages/forum/MessagesDetails/MessagesDetails'
-import Chart from './pages/mine/Echarts/Echarts'
+import CreateComment from './pages/forum/createComment/createComment'
 const Stack = createNativeStackNavigator()
 function Page() {
    return (
       <TasksProvider>
          <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator screenOptions={{ headerShown: false }}>
                <Stack.Screen name="First" component={First} />
                <Stack.Screen name="Signup" component={SignUp} />
                <Stack.Screen name="Login" component={Login} />
@@ -33,6 +33,7 @@ function Page() {
                   name="MessagesDetails"
                   component={MessagesDetails}
                />
+               <Stack.Screen name="CreateComment" component={CreateComment} />
             </Stack.Navigator>
          </NavigationContainer>
       </TasksProvider>

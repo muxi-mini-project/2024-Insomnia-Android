@@ -9,5 +9,4 @@ function NightSaying() {
    const messages = useFetchMessages('熬夜树洞')
    return <Messages messages={messages} />
 }
-
 export default NightSaying

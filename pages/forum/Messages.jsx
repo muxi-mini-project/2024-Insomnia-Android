@@ -15,6 +15,7 @@ function Messages({ messages }) {
                      onPress={() => {
                         navigation.navigate('MessagesDetails', {
                            id: message.id,
+                           tUuid: message.tUuid,
                            title: message.title,
                            time: message.createdAt,
                            text: message.body,
@@ -32,5 +33,4 @@ function Messages({ messages }) {
       </View>
    )
 }
-
 export default Messages

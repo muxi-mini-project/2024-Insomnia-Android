@@ -19,7 +19,6 @@ import setoutImg from '../../../assets/forum/setout.png'
 import postRequest from '../../api/postRequest'
 
 function CreateMessage({ navigation }) {
-
    const [topic, setTopic] = useState('熬夜树洞')
    const [body, setBody] = useState('')
    const [title, setTitle] = useState('')
