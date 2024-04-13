@@ -10,6 +10,14 @@ const styles = StyleSheet.create({
       left: 0,
       zIndex: -1,
    },
+   clickable: {
+      width: '100%',
+      height: '50%',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      zIndex: 2,
+   },
 })
 
 export default styles

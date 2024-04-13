@@ -1,4 +1,4 @@
-import { ImageBackground, View } from 'react-native'
+import { ImageBackground, TouchableHighlight, View } from 'react-native'
 import { useState } from 'react'
 import {
    ChainedModal,
@@ -15,6 +15,14 @@ const Conversation = () => {
    return (
       <>
          <ImageBackground style={styles.witch} source={witch}>
+            <TouchableHighlight
+               style={styles.clickable}
+               onPress={() => {
+                  setNoReply(false)
+               }}
+            >
+               <View style={styles.clickable}></View>
+            </TouchableHighlight>
             {noReply ? (
                <NoReplyModal></NoReplyModal>
             ) : (
