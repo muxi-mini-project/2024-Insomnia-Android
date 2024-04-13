@@ -18,9 +18,10 @@ function Daily({ navigation }) {
    const completedTasksCount = tasks.filter((task) => task.completed).length
    useEffect(() => {
       const fetchData = async () => {
+         const num = completedTasksCount
          try {
             await postRequest('task/upTask', {
-               completedTasksCount,
+               num,
             })
             console.log('成功更新数据')
          } catch (e) {

@@ -32,7 +32,7 @@ function Page() {
                <Stack.Screen
                   name="MessagesDetails"
                   component={MessagesDetails}
-
+               />
                <Stack.Screen name="CreateComment" component={CreateComment} />
             </Stack.Navigator>
          </NavigationContainer>
