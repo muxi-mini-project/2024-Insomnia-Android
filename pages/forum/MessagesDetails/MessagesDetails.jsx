@@ -6,6 +6,7 @@ import styles from './MessagesDetails_style'
 import CreateComment from '../createComment/createComment'
 import postRequest from '../../api/postRequest'
 import CommentList from '../CommentList/CommentList'
+import { key } from '../../../utils/keyGenerator'
 
 function MessagesDetails({ route }) {
    const { title, time, text, tUuid } = route.params
@@ -24,39 +25,41 @@ function MessagesDetails({ route }) {
    return (
       <View style={{ flex: 1 }}>
          <ImageBackground source={backgroundImg} style={styles.background}>
-            <ScrollView style={styles.container}>
-               <View style={{ paddingTop: 15 }}>
-                  <ImageBackground
-                     source={MessagesBg}
-                     style={styles.messagesBackground}
-                  >
-                     <Text style={styles.topic}>{title}</Text>
-                     <View style={styles.textcontainer}>
-                        <Text style={styles.time}>{time}</Text>
-                     </View>
-                     <Text style={styles.text}>{text}</Text>
-                  </ImageBackground>
-               </View>
-               <View style={{ paddingTop: 15 }}>
-                  <ImageBackground
-                     source={MessagesBg}
-                     style={styles.messagesBackground}
-                  >
-                     <Text style={styles.word}>评论区</Text>
-                     <>
-                        {comments &&
-                           comments.length > 0 &&
-                           comments.map((comment) => (
-                              <CommentList
-                                 id={comment.id}
-                                 time={comment.createdAt}
-                                 text={comment.body}
-                              />
-                           ))}
-                     </>
-                  </ImageBackground>
-               </View>
-            </ScrollView>
+            <View style={{ flex: 1 }}>
+               <ScrollView style={styles.container}>
+                  <View style={{ paddingTop: 15 }}>
+                     <ImageBackground
+                        source={MessagesBg}
+                        style={styles.messagesBackground}
+                     >
+                        <Text style={styles.topic}>{title}</Text>
+                        <View style={styles.textcontainer}>
+                           <Text style={styles.time}>{time}</Text>
+                        </View>
+                        <Text style={styles.text}>{text}</Text>
+                     </ImageBackground>
+                  </View>
+                  <View style={{ paddingTop: 15 }}>
+                     <ImageBackground
+                        source={MessagesBg}
+                        style={styles.messagesBackground}
+                     >
+                        <Text style={styles.word}>评论区</Text>
+                        <>
+                           {comments &&
+                              comments.length > 0 &&
+                              comments.map((comment) => (
+                                 <CommentList
+                                    id={comment.id}
+                                    time={comment.createdAt}
+                                    text={comment.body}
+                                 />
+                              ))}
+                        </>
+                     </ImageBackground>
+                  </View>
+               </ScrollView>
+            </View>
             <CreateComment tUuid={tUuid} />
          </ImageBackground>
       </View>

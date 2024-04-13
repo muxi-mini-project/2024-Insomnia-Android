@@ -42,7 +42,7 @@ const SignUp = ({ navigation }) => {
             )
          })
    }
-   const handleRegisters = () => {
+   const setRegisters = () => {
       fetch('http://8.130.69.161:8080/api/v1/auth/signup', {
          method: 'POST',
          headers: {
@@ -110,7 +110,7 @@ const SignUp = ({ navigation }) => {
                style={styles.password}
                secureTextEntry={true}
             />
-            <TouchableOpacity onPress={handleRegisters}>
+            <TouchableOpacity onPress={setRegisters}>
                <Image source={SignupButton} style={styles.signupButton}></Image>
             </TouchableOpacity>
          </ImageBackground>

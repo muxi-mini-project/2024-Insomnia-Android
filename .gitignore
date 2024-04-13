@@ -2,7 +2,7 @@
 
 # dependencies
 node_modules/
-
+pages/api/qiniu
 # Expo
 .expo/
 dist/

@@ -11,6 +11,8 @@ const styles = StyleSheet.create({
    container: {
       top: windowHeight * 0.1,
       flex: 1,
+      paddingBottom: windowHeight * 0.1,
+      maxHeight: windowHeight * 0.8,
    },
    text: {
       fontSize: 18,

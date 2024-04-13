@@ -19,21 +19,21 @@ function Page() {
       <TasksProvider>
          <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
-               {/*<Stack.Screen name="First" component={First} />*/}
-               {/*<Stack.Screen name="Signup" component={SignUp} />*/}
-               {/*<Stack.Screen name="Login" component={Login} />*/}
-               {/*<Stack.Screen name="Home" component={Home} />*/}
-               {/*<Stack.Screen name="DailyDetail" component={DailyDetail} />*/}
-               {/*<Stack.Screen name="Mine" component={Mine} />*/}
+               <Stack.Screen name="First" component={First} />
+               <Stack.Screen name="Signup" component={SignUp} />
+               <Stack.Screen name="Login" component={Login} />
+               <Stack.Screen name="Home" component={Home} />
+               <Stack.Screen name="DailyDetail" component={DailyDetail} />
+               <Stack.Screen name="Mine" component={Mine} />
                <Stack.Screen name="Conversation" component={Conversation} />
-               {/*<Stack.Screen name="Daily" component={Daily} />*/}
-               {/*<Stack.Screen name="Createmessage" component={CreateMessage} />*/}
-               {/*<Stack.Screen name="Forum" component={Forum} />*/}
-               {/*<Stack.Screen*/}
-               {/*   name="MessagesDetails"*/}
-               {/*   component={MessagesDetails}*/}
-               {/*/>*/}
-               {/*<Stack.Screen name="CreateComment" component={CreateComment} />*/}
+               <Stack.Screen name="Daily" component={Daily} />
+               <Stack.Screen name="Createmessage" component={CreateMessage} />
+               <Stack.Screen name="Forum" component={Forum} />
+               <Stack.Screen
+                  name="MessagesDetails"
+                  component={MessagesDetails}
+               />
+               <Stack.Screen name="CreateComment" component={CreateComment} />
             </Stack.Navigator>
          </NavigationContainer>
       </TasksProvider>
