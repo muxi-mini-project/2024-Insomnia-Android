@@ -6,6 +6,7 @@ import styles from './MessagesDetails_style'
 import CreateComment from '../createComment/createComment'
 import postRequest from '../../api/postRequest'
 import CommentList from '../CommentList/CommentList'
+import { key } from '../../../utils/keyGenerator'
 
 function MessagesDetails({ route }) {
    const { title, time, text, tUuid } = route.params
